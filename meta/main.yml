@@ -17,14 +17,5 @@ galaxy_info:
     - database
 
 dependencies:
-  - role: ansible-s3cmd
-    src: https://github.com/leucos/ansible-s3cmd.git
-    when: 'percona_backup is defined and percona_backup.s3bucket is defined'
-  - role: ansible-ferm
-    src: https://github.com/leucos/ansible-ferm.git
-    when: ferm_enabled | default(false)
-  - role: ansible-datadog-agent
-    src: https://github.com/leucos/ansible-datadog-agent.git
-    when: datadog_api_key | default(false)
-  - role: ansible-percona-client
-    src: https://github.com/leucos/ansible-percona-client.git
+  - include: ansible-percona-client
+    src: https://github.com/kmzby/ansible-percona-client.git
