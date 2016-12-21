@@ -35,8 +35,5 @@ for j in $DB; do
     done
   fi
 
-  if [ -n "{{ percona_backup.s3bucket }}" ]; then
-    s3cmd sync --delete-removed {{ percona_backup.destination }}/ s3://{{ percona_backup.s3bucket }}/
-  fi
 done
 
